@@ -16,6 +16,7 @@ const Icon = (props) => {
           className="aspect-square h-16 drop-shadow-md"
           src={`/assets/${props.name}.svg`}
           alt={`Icono: ${props.name}`}
+          loading="lazy"
         />
       )
     default:

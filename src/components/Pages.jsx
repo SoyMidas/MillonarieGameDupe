@@ -37,7 +37,7 @@ const Page = (props) => {
       return <Profile />;
     case "Investing":
       return (
-        <div className="overflow-clip w-screen h-screen pb-20 flex flex-col gap-4">
+        <div className="w-full h-screen overflow-hidden lg:w-[97vw] lg:ml-[3vw] pb-20 flex flex-col gap-4">
           <h1 className="font-bold text-4xl p-3">Investing</h1>
 
           <ul className="h-fit w-full flex flex-row justify-evenly">
@@ -48,7 +48,7 @@ const Page = (props) => {
             ))}
           </ul>
           <ul
-            className="relative h-screen w-fit flex flex-row z-0 transition-all duration-300"
+            className="relative h-screen w-fit h-full flex flex-row z-0 transition-all duration-300"
             style={{ right: `${distance}%` }}
           >
             <Shares />
@@ -58,7 +58,12 @@ const Page = (props) => {
         </div>
       );
     case "Stock market":
-      return <div className="w-screen h-fit"><Market /></div>;
+      return <div className="w-full h-fit"><Market Array={['Highest dividend',
+      'Lowest dividend',
+      'Cheap first',
+      'Expensive first',
+      'Highest capitalization',
+      'Lowest capitalization']}/></div>;
     case "My shares":
       return <MyPocket />;
     default:

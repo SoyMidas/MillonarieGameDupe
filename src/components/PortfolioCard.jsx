@@ -1,5 +1,5 @@
 import Icon from "../Layouts/LayoutIcons";
-import Data from "../data/profile";
+import Data from "../data/Data";
 
 const Card = (props) => {
   const DataMoneyPocketStock = Data[props.title + "MoneyPocketStock"];
@@ -8,7 +8,7 @@ const Card = (props) => {
     Data[props.title + "MoneyStockPerHourValue"];
 
   return (
-    <div className="shadow-lg shadow-colors-blue-800/20 overflow-clip rounded-lg flex flex-col grid-3 bg-colors-blue-200/30">
+    <div className="shadow-lg shadow-colors-blue-800/20 overflow-clip rounded-lg flex flex-col grid-3 bg-colors-blue-200/30 lg:w-[20vw] h-fit">
       <div className="bg-colors-blue-600 p-2 flex flex-row gap-1 text-colors-white">
         <Icon name="portfolio" />
         <h3>My stock portafolio</h3>

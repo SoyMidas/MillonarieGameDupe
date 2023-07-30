@@ -1,5 +1,5 @@
 import React from 'react';
-import Data from '../data/profile'
+import {PersonalData, GameData} from '../data/Data'
 
 // Función de hash muy simple para convertir una cadena en un número
 function simpleHash(str) {
@@ -31,14 +31,14 @@ const EarningsPageInfo = (props) => {
 
   return (
     <div className={`
-      p-4 bg-[linear-gradient(90deg,_#1E1E1E_56.77%,_#D9D9D9_56.78%)] rounded-2xl shadow-lg w-80 aspect-video text-primary
+      p-4 bg-[linear-gradient(90deg,_#1E1E1E_56.77%,_#D9D9D9_56.78%)] rounded-2xl shadow-lg w-full aspect-video text-primary
       flex flex-col justify-between font-bold z-10
       `}>
         <p className="text-sm text-colors-gray-300">{randomCode}</p>
         <p className='text-lg'>{name}</p>
         <div>
           <p className='text-sm'>Cash:</p>
-          <p className='text-colors-lime-500 font-bold text-lg'>$ {Data.Cash}</p>
+          <p className='text-colors-lime-500 font-bold text-lg'>$ {PersonalData.Cash}</p>
         </div>
     </div>
   );

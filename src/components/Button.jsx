@@ -4,7 +4,7 @@ const LargeButton = (props) => {
   switch(props.color) {
     default:
       return (
-        <a>
+        <>
           <button className={`
           border-0
           w-full h-fit p-4
@@ -20,11 +20,11 @@ const LargeButton = (props) => {
             </div>
             <Icon name="ArrowRight" />
           </button>
-        </a>
+        </>
       );
     case "gray":
       return (
-        <a>
+        <>
           <button className={`
           border-0
           w-full h-fit p-4
@@ -40,7 +40,7 @@ const LargeButton = (props) => {
             </div>
             <Icon name="ArrowRight" />
           </button>
-        </a>
+        </>
       );
   }
 };
@@ -48,7 +48,7 @@ const LargeButton = (props) => {
 
 const SmallButton = (props) => (
   <button
-    className="text-base text-colors-zinc-100 hover:text-colors-zinc-200 bg-gradient-to-r from-colors-blue-800 to-colors-blue-600 hover:shadow"
+    className="text-base text-colors-zinc-100 hover:text-colors-zinc-200 bg-gradient-to-r from-colors-blue-800 to-colors-blue-600 hover:shadow lg:w-[20vw]"
     onClick={props.onClick}
   >
     {props.name}

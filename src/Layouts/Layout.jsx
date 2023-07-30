@@ -12,15 +12,22 @@ const Layout = () => {
 
   return (
     <div className="w-screen h-fit">
-      <nav className={`
+      <nav
+        className={`
       w-screen h-fit fixed bottom-0 left-0 z-50 
-      rounded-lg rounded-b-none 
+      rounded-t-lg 
       bg-gradient-to-r from-colors-blue-600 to-colors-blue-500
-      `}>
+      lg:w-fit lg:h-screen
+      lg:rounded-r-lg lg:rounded-l-none
+      `}
+      >
         <ul
           className={`
-            flex flex-row justify-around
-            h-14 
+            flex flex-row justify-evenly
+            h-14
+
+            lg:flex-col lg:place-content-evenly
+            lg:w-14 lg:h-full
         `}
         >
           {List.map(({ name, link }, index) => (
@@ -28,8 +35,11 @@ const Layout = () => {
               key={index}
               className="p-4 grid place-content-center aspect-square"
             >
-              <Link to={link} className="grid place-content-center text-colors-black hover:bg-colors-white rounded-full -m-5 transition-all">
-                <Icon name={name}/>
+              <Link
+                to={link}
+                className="grid place-content-center text-colors-black hover:bg-colors-white rounded-full -m-5 transition-all"
+              >
+                <Icon name={name} />
               </Link>
             </li>
           ))}

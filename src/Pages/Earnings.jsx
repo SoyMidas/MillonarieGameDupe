@@ -14,8 +14,8 @@ const Investing = () => {
           d="M0,64L120,80C240,96,480,128,720,128C960,128,1200,96,1320,80L1440,64L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"
         ></path>
       </svg>
-      <Card Name="Midas Wolf" />
-      <List />
+      <span className='absolute top-6 lg:left-40 lg:top-60 lg:w-[30rem] w-[20rem]'><Card Name="Midas Wolf" /></span>
+      <span className='absolute top-72 w-[20rem] lg:left-[42rem] lg:top-[14rem] lg:w-[30rem]'><List /></span>
     </div>
   );
 };

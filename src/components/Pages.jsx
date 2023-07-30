@@ -48,7 +48,7 @@ const Page = (props) => {
             ))}
           </ul>
           <ul
-            className="relative h-screen w-fit h-full flex flex-row z-0 transition-all duration-300"
+            className="relative w-fit h-full flex flex-row z-0 transition-all duration-300"
             style={{ right: `${distance}%` }}
           >
             <Shares />

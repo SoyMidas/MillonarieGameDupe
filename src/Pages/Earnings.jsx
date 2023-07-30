@@ -21,4 +21,3 @@ const Investing = () => {
 };
 
 export default Investing;
-ñ

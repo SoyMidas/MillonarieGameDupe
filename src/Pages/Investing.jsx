@@ -22,14 +22,14 @@ const Shares = () => {
 
 const Market = () => {
   return (
-    <div className="px-8 pt-10 flex flex-col justify-center gap-3 w-scren h-fit overflow-x-hidden">
+    <div className="px-8 pt-10 flex flex-col justify-center gap-3 w-scren h-fit">
       <div className="flex flex-row items-center gap-2">
         <Icon name="ArrowLeft" />
         <h1 className="h-fit w-fit text-3xl font-bold drop-shadow-md">
           Stock market
         </h1>
       </div>
-      <div className="px-8 pt-10 flex flex-row justify-center gap-3 w-[100%] h-fit overflow-x-hidden">
+      <div className="px-8 pt-10 flex flex-row justify-center gap-3 w-[100%] h-fit overflow-x-scroll">
 
         {
         ["Highest dividend", "Lowest dividend", "Cheap first", "Expensive first", "Highest capitalization", "Lowest capitalization"].map(

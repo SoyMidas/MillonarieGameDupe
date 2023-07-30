@@ -14,7 +14,7 @@ const Icon = (props) => {
       return (
         <img
           className="aspect-square h-16 drop-shadow-md"
-          src={`../../public/assets/${props.name}.svg`}
+          src={`/assets/${props.name}.svg`}
           alt={`Icono: ${props.name}`}
         />
       )

@@ -1,9 +1,10 @@
-import Layout from './Layouts/Layout';
+import Layout from "./Layouts/Layout";
 import React from "react";
-import {BrowserRouter as Router, useRoutes} from "react-router-dom";
-import Page from './components/Pages'
-import 'material-symbols';
-
+import { BrowserRouter as Router, useRoutes } from "react-router-dom";
+import Page from "./Pages";
+import "material-symbols";
+import MyInteractions from "./components/MyInteractions";
+import Market from "./components/Market";
 
 function App() {
   let element = useRoutes([
@@ -33,11 +34,41 @@ function App() {
         },
         {
           path: "investing/stock_market",
-          element: <Page title="Stock market" />,
+          element: (
+            <div className="m-6">
+              <Market
+                name="Shares Market"
+                type="Brands"
+                filters={[
+                  "Highest dividend",
+                  "Lowest dividend",
+                  "Cheap first",
+                  "Expensive first",
+                  "Highest capitalization",
+                  "Lowest capitalization",
+                ]}
+              />
+            </div>
+          ),
         },
         {
           path: "investing/my_shares",
-          element: <Page title="My shares" />,
+          element: (
+            <div className="m-6">
+              <MyInteractions
+                name="My Shares"
+                type="Brands"
+                filters={[
+                  "Highest dividend",
+                  "Lowest dividend",
+                  "Cheap first",
+                  "Expensive first",
+                  "Highest capitalization",
+                  "Lowest capitalization",
+                ]}
+              />
+            </div>
+          ),
         },
         {
           path: "investing/*",

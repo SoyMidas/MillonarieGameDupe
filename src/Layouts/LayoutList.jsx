@@ -1,84 +1,71 @@
 import Icon from "../Layouts/LayoutIcons";
-import {PersonalData, GameData} from "../data/Data";
+import jsonData from "../data/Data.json";
 
 const List = (props) => {
-  return (
-    <div className="px-8 pt-10 flex flex-col justify-center gap-3 w-screen h-full lg:w-[35vw]">
-      <div className="flex flex-row items-center gap-2">
-        <span className="lg:hidden grid place-content-center"><Icon name="ArrowLeft" /></span>
-        <h1 className="h-fit w-fit text-3xl font-bold drop-shadow-md">
-          {props.name}
-        </h1>
-      </div>
-      <div className="flex flex-row gap-3 overflow-x-auto h-fit py-5">
-        {props.Array.map((name, id) => (
-          <div
-            key={id}
-            className="bg-colors-zinc-300 rounded-full font-semibold text-md h-max min-w-max py-2 px-6 lg:px-10 xl:px-20 text-colors-black cursor-pointer"
-          >
-            {name}
-          </div>
-        ))}
-      </div>
-      <ul className="flex flex-col gap-3 overflow-y-auto h-full">
-        {GameData.SharesStockBrandsList.map(
-          ({ id, name, state, MoneyValue, Porcentage, Value }, index) => {
-            return (
-              <li
-                key={index}
-                className={`
-                items-center grid grid-cols-[4vw,_1fr,_max-content] gap-x-2 grid-rows-2 
-                rounded-lg 
-                bg-gradient-to-r from-colors-zinc-200 from-80% 
-                shadow-md 
-                w-full h-fit p-3 
-                ${
-                  MoneyValue === "+"
-                    ? "to-colors-green-300"
-                    : MoneyValue === "-"
-                    ? "to-colors-red-300"
-                    : "text-colors-slate-300"
-                }`}
-              >
-                {/* Icono */}
-                <span className="row-span-2 col-span-1 row-start-1 w-fit p-1 aspect-square">
-                  <Icon name={id} />
-                </span>
+  const { type } = props; // Destructure the "type" prop
 
-                {/* Nombre */}
-                <span className="col-span-2 min-w-min max-w-max font-medium text-3xl col-start-2 row-start-1 text-left">
-                  {name}
-                </span>
-                {/* Estado */}
-                <span className="text-sm capitalize text-colors-zinc-500 col-start-2 row-start-2 w-fit">
-                  {state}
-                </span>
-                {/* Valor */}
-                <span className="font-medium text-xl w-fit col-start-3 row-start-1 place-self-end">
-                  $ {Value}
-                </span>
-                {/* Porcentaje */}
-                {MoneyValue === "+" ? (
-                  <span className="text-md text-colors-emerald-500 flex flex-row items-center w-fit col-start-3 place-self-end">
-                    <Icon name="ArrowDown" />
-                    {Porcentage}
-                  </span>
-                ) : MoneyValue === "-" ? (
-                  <span className="text-md text-colors-red-500 flex flex-row items-center w-fit col-start-3 place-self-end">
-                    <Icon name="ArrowDown" />
-                    {Porcentage}
-                  </span>
-                ) : (
-                  <span className="text-md text-colors-red-500 flex flex-row items-center w-fit col-start-3 place-self-end">
-                    404
-                  </span>
-                )}
-              </li>
-            );
-          }
-        )}
-      </ul>
-    </div>
+  // Make sure "jsonData.Game" exists and has "type" as a property
+  if (!jsonData.Game || !jsonData.Game[type]) {
+    return null; // Or render some fallback content or an error message
+  }
+
+  const gameData = jsonData.Game[type];
+
+  return (
+    <ul className="w-full h-full flex flex-col gap-4 overflow-auto lg:pb-40 pb-12">
+      {Object.entries(gameData).map(([id, brandData], index) => (
+        <li
+          key={index}
+          className={`
+            items-center grid grid-cols-[auto_1fr_max-content] gap-x-4 grid-rows-2
+            rounded-lg  
+            bg-gradient-to-r from-zinc-200 from-80% 
+            shadow-md 
+            w-full h-fit p-3
+            ${
+              brandData.Money.Value === "+"
+                ? "to-green-300"
+                : brandData.Money.Value === "-"
+                ? "to-red-300"
+                : "text-slate-300"
+            }`}
+        >
+          {/* Icono */}
+          <span className="row-span-2 col-span-1 row-start-1 w-fit p-1 aspect-square">
+            <Icon name={id} />
+          </span>
+
+          {/* Nombre */}
+          <h2 className="self-end col-span-2 w-full font-medium lg:font-semibold lg:text-xl text-xs col-start-2 row-start-1 text-left overflow-ellipsis">
+            {brandData.name} {/* Access name from brandData */}
+          </h2>
+          {/* Estado */}
+          <span className="text-sm capitalize text-zinc-500 col-start-2 row-start-2 w-fit self-start">
+            {brandData.state} {/* Access state from brandData */}
+          </span>
+          {/* Valor */}
+          <span className="font-medium text-xl w-fit col-start-3 row-start-1 self-end">
+            $ {brandData.Money.Quantity} {/* Access Value from brandData */}
+          </span>
+          {/* Porcentaje */}
+          {brandData.Money.Value === "+" ? (
+            <span className="text-md text-emerald-500 flex flex-row items-center w-fit col-start-3 place-self-start">
+              <Icon name="ArrowDown" />
+              {brandData.Money.Porcentage} {/* Access Porcentage from brandData */}
+            </span>
+          ) : brandData.Money.Value === "-" ? (
+            <span className="text-md text-red-500 flex flex-row items-center w-fit col-start-3 place-self-start">
+              <Icon name="ArrowDown" />
+              {brandData.Money.Porcentage} {/* Access Porcentage from brandData */}
+            </span>
+          ) : (
+            <span className="text-md text-red-500 flex flex-row items-center w-fit col-start-3 place-self-start">
+              404
+            </span>
+          )}
+        </li>
+      ))}
+    </ul>
   );
 };
 

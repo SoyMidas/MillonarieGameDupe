@@ -1,0 +1,172 @@
+{
+  "Personal": {
+    "Cash": "1.000.000",
+    "Total": {
+      "Quantity": "1.000",
+      "Value": "+"
+    },
+    "shares": {
+      "StockPerHour": {
+        "Quantity": "1.000",
+        "Value": "+"
+      },
+      "PocketStock": "100",
+      "Portfolio": "1.000"
+    },
+    "realstate": {
+      "StockPerHour": {
+        "Quantity": "1.000",
+        "Value": "+"
+      },
+      "PocketStock": "100",
+      "Portfolio": "1.000"
+    },
+    "crypto": {
+      "StockPerHour": {
+        "Quantity": "1.000",
+        "Value": "+"
+      },
+      "PocketStock": "100",
+      "Portfolio": "1.000"
+    }
+  },
+  "Game": {
+    "Brands": {
+      "bmw": {
+        "name": "BMW",
+        "state": "aviable",
+        "Money": {
+          "Value": "+",
+          "Quantity": "99.000",
+          "Porcentage": "0.12"
+        }
+      },
+      "mercedes": {
+        "name": "Mercedes",
+        "state": "aviable",
+        "Money": {
+          "Value": "+",
+          "Quantity": "99.000",
+          "Porcentage": "0.12"
+        }
+      },
+      "mitsubishi": {
+        "name": "Mitsubishi",
+        "state": "aviable",
+        "Money": {
+          "Value": "-",
+          "Quantity": "99.000",
+          "Porcentage": "0.12"
+        }
+      },
+      "toyota": {
+        "name": "Toyota",
+        "state": "aviable",
+        "Money": {
+          "Value": "-",
+          "Quantity": "99.000",
+          "Porcentage": "0.12"
+        }
+      },
+      "ferrari": {
+        "name": "Ferrari",
+        "state": "aviable",
+        "Money": {
+          "Value": "+",
+          "Quantity": "99.000",
+          "Porcentage": "0.12"
+        }
+      },
+      "tesla": {
+        "name": "Tesla",
+        "state": "aviable",
+        "Money": {
+          "Value": "+",
+          "Quantity": "99.000",
+          "Porcentage": "0.12"
+        }
+      },
+      "mazda": {
+        "name": "Mazda",
+        "state": "aviable",
+        "Money": {
+          "Value": "+",
+          "Quantity": "99.000",
+          "Porcentage": "0.12"
+        }
+      },
+      "facebook": {
+        "name": "Facebook",
+        "state": "aviable",
+        "Money": {
+          "Value": "+",
+          "Quantity": "99.000",
+          "Porcentage": "0.12"
+        }
+      },
+      "twitter": {
+        "name": "Twitter",
+        "state": "aviable",
+        "Money": {
+          "Value": "-",
+          "Quantity": "99.000",
+          "Porcentage": "0.12"
+        }
+      },
+      "youtube": {
+        "name": "Youtube",
+        "state": "aviable",
+        "Money": {
+          "Value": "+",
+          "Quantity": "99.000",
+          "Porcentage": "0.12"
+        }
+      },
+      "twitch": {
+        "name": "Twitch",
+        "state": "aviable",
+        "Money": {
+          "Value": "+",
+          "Quantity": "99.000",
+          "Porcentage": "0.12"
+        }
+      },
+      "kick": {
+        "name": "Kick",
+        "state": "aviable",
+        "Money": {
+          "Value": "-",
+          "Quantity": "99.000",
+          "Porcentage": "0.12"
+        }
+      },
+      "motorola": {
+        "name": "Motorola",
+        "state": "aviable",
+        "Money": {
+          "Value": "+",
+          "Quantity": "99.000",
+          "Porcentage": "0.12"
+        }
+      },
+      "xiaomi": {
+        "name": "Xiaomi",
+        "state": "aviable",
+        "Money": {
+          "Value": "-",
+          "Quantity": "99.000",
+          "Porcentage": "0.12"
+        }
+      },
+      "openai": {
+        "name": "OpenAI",
+        "state": "aviable",
+        "Money": {
+          "Value": "-",
+          "Quantity": "99.000",
+          "Porcentage": "0.12"
+        }
+      }
+    }
+  }
+}

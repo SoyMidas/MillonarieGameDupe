@@ -11,12 +11,12 @@ const Layout = () => {
   ];
 
   return (
-    <div className="w-screen h-fit">
+    <div className="w-screen h-fit ">
       <nav
         className={`
       w-screen h-fit fixed bottom-0 left-0 z-50 
       rounded-t-lg 
-      bg-gradient-to-r from-colors-blue-600 to-colors-blue-500
+      bg-gradient-to-r from-blue-600 to-blue-500
       lg:w-fit lg:h-screen
       lg:rounded-r-lg lg:rounded-l-none
       `}
@@ -37,7 +37,7 @@ const Layout = () => {
             >
               <Link
                 to={link}
-                className="grid place-content-center text-colors-black hover:bg-colors-white rounded-full -m-5 transition-all"
+                className="grid place-content-center text-black hover:bg-white rounded-full -m-5 transition-all"
               >
                 <Icon name={name} />
               </Link>
